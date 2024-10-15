@@ -8,6 +8,7 @@ import { EditAboutComponent } from './pages/edit-about/edit-about.component';
 import { NotRegisteredComponent } from './pages/not-registered/not-registered.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { authGuard } from './services/canActiveRoute/auth.guard';
+import { childauthGuard } from './services/canActiveChildRoute/childauth.guard';
 
 export const routes: Routes = [
   {
@@ -22,6 +23,7 @@ export const routes: Routes = [
   {
     path : 'about',
     component : AboutComponent,
+    canActivateChild : [childauthGuard],
     children : [
       {
         path : 'edit',

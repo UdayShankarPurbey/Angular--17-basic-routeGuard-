@@ -7,12 +7,11 @@ let user = 'user';
 
 export const authGuard: CanActivateFn = (route, state) => {
   const router = inject(Router); // Properly inject Router
-  console.log(user !== 'admin');
 
   if (user !== 'admin') {
     router.navigate(['/not-registered']); 
     return false;
   }
   
-  return true; // Allow access to the route
+  return true; 
 };
