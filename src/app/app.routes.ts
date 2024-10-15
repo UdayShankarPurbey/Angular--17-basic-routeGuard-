@@ -11,6 +11,7 @@ import { authGuard } from './services/canActiveRoute/auth.guard';
 import { childauthGuard } from './services/canActiveChildRoute/childauth.guard';
 import { showpopupGuard } from './services/canDeactiveRoute/showpopup.guard';
 import { loadModuleGuard } from './services/canLoadRoute/load-module.guard';
+import { DataResolver } from './services/resolveGuard/resolve.guard';
 
 export const routes: Routes = [
   {
@@ -45,7 +46,10 @@ export const routes: Routes = [
   },
   {
     path : 'products',
-    component : ProductsComponent
+    component : ProductsComponent,
+    resolve : {
+      data : DataResolver
+    }
   },
   {
     path : 'offer',
