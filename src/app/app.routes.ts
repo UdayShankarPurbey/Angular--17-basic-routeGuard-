@@ -9,6 +9,7 @@ import { NotRegisteredComponent } from './pages/not-registered/not-registered.co
 import { ProductsComponent } from './pages/products/products.component';
 import { authGuard } from './services/canActiveRoute/auth.guard';
 import { childauthGuard } from './services/canActiveChildRoute/childauth.guard';
+import { showpopupGuard } from './services/canDeactiveRoute/showpopup.guard';
 
 export const routes: Routes = [
   {
@@ -38,6 +39,7 @@ export const routes: Routes = [
   },
   {
     path : 'contact',
+    canDeactivate : [showpopupGuard],
     component : ContactComponent
   },
   {
