@@ -1,0 +1,35 @@
+/* header.component.css */
+header {
+  background-color: #000000;
+  padding: 10px 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between; /* Space out the items */
+  align-items: center; /* Center vertically */
+}
+
+nav li {
+  margin-right: 20px; /* Space between list items */
+}
+
+nav li:last-child {
+  margin-left: auto; /* Push "Admin" to the end */
+}
+
+nav a {
+  text-decoration: none;
+  color: #007bff;
+  padding: 5px 10px; /* Add padding for clickable area */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+nav a:hover {
+  background-color: #e9ecef; /* Highlight on hover */
+  border-radius: 5px; /* Rounded corners on hover */
+}
