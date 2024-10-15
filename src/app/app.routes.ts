@@ -10,6 +10,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { authGuard } from './services/canActiveRoute/auth.guard';
 import { childauthGuard } from './services/canActiveChildRoute/childauth.guard';
 import { showpopupGuard } from './services/canDeactiveRoute/showpopup.guard';
+import { loadModuleGuard } from './services/canLoadRoute/load-module.guard';
 
 export const routes: Routes = [
   {
@@ -48,6 +49,7 @@ export const routes: Routes = [
   },
   {
     path : 'offer',
+    canLoad : [ loadModuleGuard ],
     loadChildren : () => import('./pages/offers/offers.module').then(m => m.OffersModule)
   },
   {
